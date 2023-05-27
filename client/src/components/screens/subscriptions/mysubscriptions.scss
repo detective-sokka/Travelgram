@@ -1,0 +1,56 @@
+.parent {
+    width: 100%;
+    
+}
+.child_left{
+    display: inline-block;
+    width: 40%;
+    border-right: solid;
+}
+.child_leftspace{
+    display: inline-block;
+    width: 30%;
+    
+}
+.child_right{
+    display: inline-block;
+    width: 60%;
+    float: right;
+    padding-left: 10%;
+}
+.subscriptions{
+   
+    height: 45px;
+    width: 45%;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    border-radius: 25px;
+    text-align: center;
+    font-size: 25px;
+    margin:30px;
+    border: solid;
+    background-color: aqua;
+    display: inline-block;
+    
+}
+.btn_{
+    width:45px !important; 
+    height:45px !important;
+    background-color: #dd152f !important; 
+    border: none;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    margin-top: 20px  !important;
+    display: inline-block;
+    border-radius: 50%;    
+}
+.part1{
+    width:20%;
+}
+
+.parent h1 {
+
+    text-align: center;
+}
