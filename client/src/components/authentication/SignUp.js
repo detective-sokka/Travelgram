@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import M from "materialize-css";  
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -58,7 +57,7 @@ const SignUp = () => {
       });
   };
   return (    
-      <div className="card mx-auto mt-30 align-self-center">
+      <div className="card auth-card mx-auto mt-30 align-self-center">
         <h2 className="text-center px-5">SignUp</h2>                
         <input
           type="text"
@@ -73,10 +72,10 @@ const SignUp = () => {
           onChange={(e) => setEmail(e.target.value)}
         />    
         <div align="left">
-        <input type="checkbox" id="admin" name="admin" value={admin} 
-        onChange={e => {console.log(e.target.checked);
+          <input type="checkbox" id="admin" name="admin" value={admin} 
+          onChange={e => {console.log(e.target.checked);
           setUser(e.target.checked)}}/>
-        <label for="admin"> Admin</label> 
+          <label for="admin"> Admin</label> 
         </div>    
         <br></br>
 
@@ -87,12 +86,12 @@ const SignUp = () => {
           onChange={(e) => setPassword(e.target.value)}
         /><br></br>
         <button
-          className="btn waves-effect waves-light #3f51b5 indigo"
+          className="waves-effect waves-light #3f51b5 indigo align-self-center"
           onClick={() => PostData()}
         >
           SignUp
         </button><br></br>
-        <h6>
+        <h6 className="align-self-center">
           <Link to="/login">Already have an account? </Link>
         </h6>
         { warning &&

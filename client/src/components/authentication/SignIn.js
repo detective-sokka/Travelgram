@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useState , createContext } from "react";
+import { useState } from "react";
 import { Link ,useNavigate} from "react-router-dom";
 import M from 'materialize-css';
 import {UserContext} from '../../App'
@@ -76,11 +76,11 @@ const PostData =() =>{
                value={password}
                onChange={(e)=>setPassword(e.target.value)}
                 />
-                <button className="btn waves-effect waves-light #3f51b5 indigo" 
+                <button className="login-btn waves-effect waves-light #3f51b5 indigo align-self-center mt-2" 
                 onClick={()=>PostData()}  >
                     Login
                 </button>
-                <h6>
+                <h6 className="mt-2">
                     <Link to="/signup">Don't have an account? </Link>
                 </h6>
                 
