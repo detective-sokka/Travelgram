@@ -10,7 +10,6 @@ import "./Css/story.scss";
 import "./Css/home.scss";
 import NavBar from "./components/NavBar";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-import Front from "./components/screens/Front";
 import SignIn from "./components/authentication/SignIn";
 import SignUp from "./components/authentication/SignUp";
 import Profile from "./components/user/Profile";
@@ -19,7 +18,6 @@ import AdminHome from "./components/screens/AdminHome";
 import CreatePost from "./components/user/CreatePost";
 import CreateStories from "./components/stories/CreateStories";
 import Stories from "./components/stories/Stories";
-import AboutUs from "./components/screens/About";
 import UserProfile from "./components/user/UserProfile";
 import { reducer, initialState } from "./reducers/userReducer.js";
 import SubscribedUserPosts from "./components/user/SubscribesUserPosts";
@@ -52,9 +50,7 @@ const Routing = () => {
   
   return (
     <Routes>
-      <Route exact path="/" element={<Home />} />
-      <Route path="/front" element={<Front />} />
-      <Route path="/about" element={<AboutUs />} />
+      <Route exact path="/" element={<Home />} />    
       <Route path="/login" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/createstory" element={<CreateStories />} />

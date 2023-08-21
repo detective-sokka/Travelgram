@@ -50,9 +50,7 @@ const NavBar = () => {
     }else{
       
        return [
-
-        <li className="links"><Link to="/front">Home</Link></li>,
-        <li className="links"><Link to="/about">About</Link></li>,
+        
       <li><button className="btn btn-outline-danger" 
                 onClick={navigateLogin}  >
                     Login
