@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "../../Css/home.scss";
 import { UserContext } from "../../App";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import M from "materialize-css";
 
 const Stories = () => {
 
@@ -42,12 +40,9 @@ const Stories = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.error) {
-            M.toast({ html: data.error, classes: "#c62828 red darken-3" });
+            alert(data.error);
           } else {
-            M.toast({
-              html: "Created Story Successfully!!!!",
-              classes: "#43a047 green darken-1",
-            });
+            alert("Created story successfully");
             navigate("/");
           }
         })
@@ -74,12 +69,9 @@ const Stories = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.error) {
-            M.toast({ html: data.error, classes: "#c62828 red darken-3" });
+            alert(data.error);
           } else {
-            M.toast({
-              html: "Created Story Successfully!!!!",
-              classes: "#43a047 green darken-1",
-            });
+            alert("Created story successfully");
           }
         })
         .catch((err) => {

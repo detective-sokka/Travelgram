@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../Css/createpost.scss";
-import M from "materialize-css";
 
 const CreateStories = () => {
   const navigate = useNavigate();
@@ -24,12 +23,10 @@ const CreateStories = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.error) {
-            M.toast({ html: data.error, classes: "#c62828 red darken-3" });
+            alert(data.error);
           } else {
-            M.toast({
-              html: "Created Story Successfully!!!!",
-              classes: "#43a047 green darken-1",
-            });
+            
+            alert("Created story successfully");
           }
         })
         .catch((err) => {
