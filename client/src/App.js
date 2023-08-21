@@ -20,7 +20,6 @@ import CreatePost from "./components/user/CreatePost";
 import CreateStories from "./components/stories/CreateStories";
 import Stories from "./components/stories/Stories";
 import AboutUs from "./components/screens/About";
-import Services from "./components/screens/Services";
 import UserProfile from "./components/user/UserProfile";
 import { reducer, initialState } from "./reducers/userReducer.js";
 import SubscribedUserPosts from "./components/user/SubscribesUserPosts";
@@ -55,7 +54,6 @@ const Routing = () => {
     <Routes>
       <Route exact path="/" element={<Home />} />
       <Route path="/front" element={<Front />} />
-      <Route path="/services" element={<Services />} />
       <Route path="/about" element={<AboutUs />} />
       <Route path="/login" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />

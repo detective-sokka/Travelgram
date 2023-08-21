@@ -39,7 +39,6 @@ const NavBar = () => {
         <li className="links"><Link to="/profile">Profile</Link></li>,
         <li className="links"><Link to="/create">Create Post</Link></li>,        
         <li className="links"><Link to="/stories">Stories</Link></li>,
-        <li className="links"><Link to="/services">Premium</Link></li>,
         <li className="links"><Link to="/mysubscriptions">My Subscriptions</Link></li>,
         <li className="links"><Link to="/allsubscriptions">Explore</Link></li>,
         <li>
