@@ -10,21 +10,19 @@ router.get("/allpost", requireLogin, (req, res) => {
     .populate("postedBy", "_id name")
     .populate("comments.postedBy", "_id name")
     .sort("-createdAt")
-    .then((posts) => {      
-      res.json({ posts });      
+    .then((posts) => {
+      res.json({ posts });
     })
     .catch((err) => {
       console.log(err);
     });
 });
 router.get("/getsubpost", requireLogin, (req, res) => {
-
   Post.find({ postedBy: { $in: req.user.following } })
     .populate("postedBy", "_id name")
     .populate("comments.postedBy", "_id name")
     .sort("-createdAt")
     .then((posts) => {
-      
       res.json({ posts });
     })
     .catch((err) => {
@@ -163,11 +161,9 @@ router.post("/addSubscription", (req, res) => {
   console.log("addc email:" + email + subscription);
   User.find({ email: email })
     .then((user) => {
-
       console.log("before" + user[0]);
 
       if (!user[0].subscriptions.includes(subscription)) {
-
         user[0].subscriptions.push(subscription);
       }
 
