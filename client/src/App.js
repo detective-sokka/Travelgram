@@ -21,8 +21,6 @@ import Stories from "./components/stories/Stories";
 import UserProfile from "./components/user/UserProfile";
 import { reducer, initialState } from "./reducers/userReducer.js";
 import SubscribedUserPosts from "./components/user/SubscribesUserPosts";
-import Allsubscriptions from "./components/screens/subscriptions/Allsubscriptions";
-import Mysubscriptions from "./components/screens/subscriptions/Mysubscriptions";
 import 'bootstrap/dist/css/bootstrap.css';
 
 
@@ -56,8 +54,6 @@ const Routing = () => {
       <Route path="/createstory" element={<CreateStories />} />
       <Route exact path="/profile" element={<Profile />} />
       <Route path="/create" element={<CreatePost belongsTo={"Global"} />} />
-      <Route path="/mysubscriptions" element={<Mysubscriptions user={state} />} />
-      <Route path="/allsubscriptions" element={<Allsubscriptions />} />
       <Route path="/stories" element={<Stories />} />
       <Route path="/profile/:userid" element={<UserProfile />} />
       <Route path="/myfollowingpost" element={<SubscribedUserPosts />} />
