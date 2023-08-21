@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../App";
@@ -8,11 +8,6 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(UserContext);
-
-  useEffect(() => {
-    var elems = document.querySelectorAll('.sidenav');
-    window.M.Sidenav.init(elems, {});
-  }, []);
 
   const navigateLogin = () => {
     navigate("/login");
