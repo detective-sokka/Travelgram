@@ -7,7 +7,7 @@ const CreateStories = () => {
   const navigate = useNavigate();
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
-  
+
   useEffect(() => {
     if (url) {
       fetch("/createstory", {
@@ -16,8 +16,8 @@ const CreateStories = () => {
           "Content-Type": "application/json",
           authorization: "Bearer " + localStorage.getItem("jwt"),
         },
-        body: JSON.stringify({          
-          pic: url     
+        body: JSON.stringify({
+          pic: url,
         }),
       })
         .then((res) => res.json())
@@ -25,7 +25,6 @@ const CreateStories = () => {
           if (data.error) {
             alert(data.error);
           } else {
-            
             alert("Created story successfully");
           }
         })
@@ -47,9 +46,7 @@ const CreateStories = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        
         setUrl(data.url);
-        
       })
       .catch((err) => {
         console.log(err);

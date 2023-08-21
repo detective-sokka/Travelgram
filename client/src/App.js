@@ -21,34 +21,28 @@ import Stories from "./components/stories/Stories";
 import UserProfile from "./components/user/UserProfile";
 import { reducer, initialState } from "./reducers/userReducer.js";
 import SubscribedUserPosts from "./components/user/SubscribesUserPosts";
-import 'bootstrap/dist/css/bootstrap.css';
-
+import "bootstrap/dist/css/bootstrap.css";
 
 export const UserContext = createContext();
 
 const Routing = () => {
-
   const navigate = useNavigate();
 
   const { state, dispatch } = useContext(UserContext);
 
   useEffect(() => {
-
     const user = JSON.parse(localStorage.getItem("user"));
     console.log("user obj app.js", user);
     if (user) {
-
-      dispatch({ type: "USER", payload: user });      
-
+      dispatch({ type: "USER", payload: user });
     } else {
-      
       navigate("/front");
     }
   }, []);
-  
+
   return (
     <Routes>
-      <Route exact path="/" element={<Home />} />    
+      <Route exact path="/" element={<Home />} />
       <Route path="/login" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/createstory" element={<CreateStories />} />

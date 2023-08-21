@@ -14,7 +14,6 @@ const AdminHome = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        
         const newData = data.filter((item) => {
           console.log(item._id, result._id);
           return item._id !== result._id;

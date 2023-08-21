@@ -141,12 +141,12 @@ const StoriesHome = () => {
   const initEmphasis = (idx) => {
     document.getElementsByClassName("status-photo")[idx].style.width = "220px";
     document.getElementsByClassName("status-photo")[idx].style.height = "220px";
-  }
+  };
 
   const endEmphasis = (idx) => {
     document.getElementsByClassName("status-photo")[idx].style.width = "200px";
     document.getElementsByClassName("status-photo")[idx].style.height = "200px";
-  }
+  };
 
   return (
     <div className="container">
@@ -168,7 +168,7 @@ const StoriesHome = () => {
         <img
           src={imageLink}
           id="status-photo-lg"
-          style={{ display: displayStatus}}
+          style={{ display: displayStatus }}
           className="img-thumbnail w-20"
         />
       }

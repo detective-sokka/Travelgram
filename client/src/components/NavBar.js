@@ -12,67 +12,84 @@ const NavBar = () => {
   const navigateLogin = () => {
     navigate("/login");
   };
-  
-  const renderList=()=>{    
+
+  const renderList = () => {
     if (state && state.admin) {
       return [
         <li>
-          <button className="btn btn-outline-danger" 
-                onClick={()=>{
-                  localStorage.clear()
-                  dispatch({type:"CLEAR"})
-                  navigate('/login');
-                }}  >
-                    LogOut
-                </button>
-        </li>
+          <button
+            className="btn btn-outline-danger"
+            onClick={() => {
+              localStorage.clear();
+              dispatch({ type: "CLEAR" });
+              navigate("/login");
+            }}
+          >
+            LogOut
+          </button>
+        </li>,
       ];
     }
-    if(state){
-       return[
-        <li className="links"><Link to={state?"/":"/login"}>Home</Link></li>,
-        <li className="links"><Link to="/profile">Profile</Link></li>,
-        <li className="links"><Link to="/create">Create Post</Link></li>,        
-        <li className="links"><Link to="/stories">Stories</Link></li>,        
+    if (state) {
+      return [
+        <li className="links">
+          <Link to={state ? "/" : "/login"}>Home</Link>
+        </li>,
+        <li className="links">
+          <Link to="/profile">Profile</Link>
+        </li>,
+        <li className="links">
+          <Link to="/create">Create Post</Link>
+        </li>,
+        <li className="links">
+          <Link to="/stories">Stories</Link>
+        </li>,
         <li>
-          <button className="btn btn-outline-danger" 
-                onClick={()=>{
-                  localStorage.clear()
-                  dispatch({type:"CLEAR"})
-                  navigate('/login');
-                }}  >
-                    LogOut
-                </button>
-        </li>
-       ]
-    }else{
-      
-       return [
-        
-      <li><button className="btn btn-outline-danger" 
-                onClick={navigateLogin}  >
-                    Login
-                </button> </li>,
-       ]
+          <button
+            className="btn btn-outline-danger"
+            onClick={() => {
+              localStorage.clear();
+              dispatch({ type: "CLEAR" });
+              navigate("/login");
+            }}
+          >
+            LogOut
+          </button>
+        </li>,
+      ];
+    } else {
+      return [
+        <li>
+          <button className="btn btn-outline-danger" onClick={navigateLogin}>
+            Login
+          </button>{" "}
+        </li>,
+      ];
     }
-  }
-    return(
-      <>
-        <nav>
-          <div className="nav-wrapper">
-            <h3 className="brand-logo left">【﻿Ｔｒａｖｅｌｇｒａｍ】</h3>
-            <a href="#" data-target="mobile-demo" className="sidenav-trigger sidenav-icon"><i className="material-icons">menu</i></a>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
-              {renderList()}
-            </ul>
-          </div>
-        </nav>
+  };
+  return (
+    <>
+      <nav>
+        <div className="nav-wrapper">
+          <h3 className="brand-logo left">【﻿Ｔｒａｖｅｌｇｒａｍ】</h3>
+          <a
+            href="#"
+            data-target="mobile-demo"
+            className="sidenav-trigger sidenav-icon"
+          >
+            <i className="material-icons">menu</i>
+          </a>
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
+            {renderList()}
+          </ul>
+        </div>
+      </nav>
 
-        <ul className="sidenav" id="mobile-demo">
-          {renderList()}
-        </ul>
-      </>
-    )
-}
+      <ul className="sidenav" id="mobile-demo">
+        {renderList()}
+      </ul>
+    </>
+  );
+};
 
 export default NavBar;

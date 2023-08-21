@@ -51,9 +51,7 @@ const CreatePost = ({ belongsTo }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        
         setUrl(data.url);
-        
       })
       .catch((err) => {
         console.log(err);
@@ -82,7 +80,7 @@ const CreatePost = ({ belongsTo }) => {
         <div className="file-path-wrapper">
           <input className="file-path validate" type="text" />
         </div>
-      </div>  
+      </div>
       <button
         class="btn waves-effect waves-light #42a5f5 blue darken-1"
         onClick={() => postDetails()}

@@ -9,14 +9,12 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [admin, setUser] = useState(false);
   const [warning, setWarning] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption, setSelectedOption] = useState("");
   const premium = false;
- 
-  
+
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
-
 
   const PostData = () => {
     if (
@@ -46,7 +44,6 @@ const SignUp = () => {
         console.log(data);
         if (data.error) {
           setWarning(true);
-          
         } else {
           setWarning(false);
           navigate("/login");
@@ -56,51 +53,59 @@ const SignUp = () => {
         console.log(err);
       });
   };
-  return (    
-      <div className="card auth-card mx-auto mt-30 align-self-center">
-        <h2 className="text-center px-5">SignUp</h2>                
+  return (
+    <div className="card auth-card mx-auto mt-30 align-self-center">
+      <h2 className="text-center px-5">SignUp</h2>
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <div align="left">
         <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          type="checkbox"
+          id="admin"
+          name="admin"
+          value={admin}
+          onChange={(e) => {
+            console.log(e.target.checked);
+            setUser(e.target.checked);
+          }}
         />
-        <input
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />    
-        <div align="left">
-          <input type="checkbox" id="admin" name="admin" value={admin} 
-          onChange={e => {console.log(e.target.checked);
-          setUser(e.target.checked)}}/>
-          <label for="admin"> Admin</label> 
-        </div>    
-        <br></br>
+        <label for="admin"> Admin</label>
+      </div>
+      <br></br>
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        /><br></br>
-        <button
-          className="waves-effect waves-light #3f51b5 indigo align-self-center"
-          onClick={() => PostData()}
-        >
-          SignUp
-        </button><br></br>
-        <h6 className="align-self-center">
-          <Link to="/login">Already have an account? </Link>
-        </h6>
-        { warning &&
-          <div class="alert alert-warning" role="alert">
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <br></br>
+      <button
+        className="waves-effect waves-light #3f51b5 indigo align-self-center"
+        onClick={() => PostData()}
+      >
+        SignUp
+      </button>
+      <br></br>
+      <h6 className="align-self-center">
+        <Link to="/login">Already have an account? </Link>
+      </h6>
+      {warning && (
+        <div class="alert alert-warning" role="alert">
           Invalid details
         </div>
-        
-        }
-      </div>    
+      )}
+    </div>
   );
 };
 
