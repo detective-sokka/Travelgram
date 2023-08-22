@@ -18,12 +18,6 @@ const userSchema = new mongoose.Schema({
   },
   admin: {
     type: Boolean,
-  },
-  premium: {
-    type: Boolean,
-    default: false,
-  },
-  followers: [{ type: ObjectId, ref: "User" }],
-  following: [{ type: ObjectId, ref: "User" }],
+  }
 });
 mongoose.model("User", userSchema);

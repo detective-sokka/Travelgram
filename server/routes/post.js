@@ -154,7 +154,6 @@ router.delete("/deletepost/:postID", requireLogin, (req, res) => {
       }
     });
 });
-//!!!!!!!!!!!!!!!!!!!!!!!!!changedbelow!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 router.post("/addSubscription", (req, res) => {
   const { email, subscription } = req.body;
@@ -212,11 +211,9 @@ router.get("/getCpost", (req, res) => {
   }
   Post.find({ belongsTo: obj.subscription })
     .populate("postedBy", "_id name")
-    .then((posts) => {
-      //changed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      //populate=> expand
-      res.json({ posts });
-      //posts:[{p1,p2}]
+    .then((posts) => {      
+      
+      res.json({ posts });      
     })
     .catch((err) => {
       console.log(err);

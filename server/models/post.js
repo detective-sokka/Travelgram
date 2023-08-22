@@ -12,11 +12,9 @@ const postSchema = new mongoose.Schema(
     },
     photo: {
       type: String,
-      required: true,
-      //default:"no photo"
+      required: true,      
     },
-    belongsTo: {
-      /// changed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    belongsTo: {      
       type: String,
     },
     likes: [{ type: ObjectId, ref: "User" }],

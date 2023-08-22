@@ -8,9 +8,10 @@ const { JWT_SECRET } = require("./../keys");
 const requireLogin = require("./../middleware/requireLogin");
 
 router.post("/signup", (req, res) => {
-  const { name, email, password, admin, premium } = req.body;
+  const { name, email, password, admin } = req.body;
   //get req information
   if (!email || !password || !name) {
+    
     return res.status(422).json({ error: "please add all fields" });
   } //check if missing data
   User.findOne({ email: email })
@@ -23,13 +24,13 @@ router.post("/signup", (req, res) => {
           .json({ error: "user already exists with that email" });
       }
       bcrypt.hash(password, 12).then((hashedpassword) => {
+
         //hash the pasword so we cannot see in the backend,protect user privacy
         const user = new User({
           email,
           password: hashedpassword,
           name,
-          admin,
-          premium,
+          admin         
         });
         user
           .save()
@@ -45,16 +46,22 @@ router.post("/signup", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
-  //res.json({message:"posted"});
 });
+
 router.post("/signin", (req, res) => {
+
   const { email, password } = req.body;
+  
   //get req information
   if (!email || !password) {
+
     res.status(422).json({ error: "please add email or password" });
   }
+
   User.findOne({ email: email }).then((savedUser) => {
+
     if (!savedUser) {
+      
       return res.status(422).json({ error: "Invalid Email or password" });
     }
     bcrypt
@@ -62,19 +69,23 @@ router.post("/signin", (req, res) => {
       .then((doMatch) => {
         //compare the password true if it matches
         if (doMatch) {
+
           const token = jwt.sign({ _id: savedUser._id }, JWT_SECRET);
-          const { _id, name, email, admin, followers, following, premium } =
+          const { _id, name, email, admin, followers, following } =
             savedUser;
+          
           res.json({
             token,
-            user: { _id, name, email, admin, followers, following, premium },
+            user: { _id, name, email, admin, followers, following },
           });
-          //response with web token,token is unique btween all user
+          //response with web token,token is unique between all user
         } else {
+
           return res.status(422).json({ error: "Invalid Email or password" });
         }
       })
       .catch((err) => {
+
         console.log(err);
       });
   });
