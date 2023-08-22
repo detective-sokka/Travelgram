@@ -38,9 +38,9 @@ const CreateStories = () => {
     const data = new FormData();
     data.append("file", image);
     console.log("Image", image);
-    data.append("upload_preset", "Insta-clone");
-    data.append("cloud_name", "dtvusjwdx");
-    fetch("https://api.Cloudinary.com/v1_1/dtvusjwdx/image/upload", {
+    data.append("upload_preset", "Travelgram");
+    data.append("cloud_name", "dislzfvur");
+    fetch("https://api.Cloudinary.com/v1_1/dislzfvur/image/upload", {
       method: "POST",
       body: data,
     })
@@ -76,5 +76,5 @@ const CreateStories = () => {
     </div>
   );
 };
-//dtvusjwdx
+//dislzfvur
 export default CreateStories;

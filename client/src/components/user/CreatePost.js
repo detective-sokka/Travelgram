@@ -41,11 +41,10 @@ const CreatePost = ({ belongsTo }) => {
 
   const postDetails = () => {
     const data = new FormData();
-    data.append("file", image);
-    console.log("Image", image);
-    data.append("upload_preset", "Insta-clone");
-    data.append("cloud_name", "dtvusjwdx");
-    fetch("https://api.Cloudinary.com/v1_1/dtvusjwdx/image/upload", {
+    data.append("file", image); 
+    data.append("upload_preset", "Travelgram");
+    data.append("cloud_name", "dislzfvur");
+    fetch("https://api.Cloudinary.com/v1_1/dislzfvur/image/upload", {
       method: "POST",
       body: data,
     })
@@ -81,8 +80,9 @@ const CreatePost = ({ belongsTo }) => {
           <input className="file-path validate" type="text" />
         </div>
       </div>
+
       <button
-        class="btn waves-effect waves-light #42a5f5 blue darken-1"
+        className="btn waves-effect waves-light #42a5f5 blue darken-1"
         onClick={() => postDetails()}
       >
         Submit
@@ -90,5 +90,5 @@ const CreatePost = ({ belongsTo }) => {
     </div>
   );
 };
-//dtvusjwdx
+//dislzfvur
 export default CreatePost;

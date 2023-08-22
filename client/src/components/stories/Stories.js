@@ -85,9 +85,9 @@ const Stories = () => {
     const data = new FormData();
     data.append("file", file);
     console.log("Image", file);
-    data.append("upload_preset", "Insta-clone");
-    data.append("cloud_name", "dtvusjwdx");
-    fetch("https://api.Cloudinary.com/v1_1/dtvusjwdx/image/upload", {
+    data.append("upload_preset", "Travelgram");
+    data.append("cloud_name", "dislzfvur");
+    fetch("https://api.Cloudinary.com/v1_1/dislzfvur/image/upload", {
       method: "POST",
       body: data,
     })
@@ -135,7 +135,7 @@ const Stories = () => {
         <label className="custom-file-upload">
           <input
             type="file"
-            class="file-button"
+            className="file-button"
             onChange={(e) => addNewStory(e.target.files[0])}
           />
           <h1 className="plus"> + </h1>
