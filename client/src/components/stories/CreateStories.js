@@ -54,27 +54,26 @@ const CreateStories = () => {
   };
 
   return (
-    <div>
-      <div className="card input-filed create-card">
-        <div className="file-field input-field">
-          <div className="btn #42a5f5 blue darken-1">
-            <span>Upload Image</span>
-            <input type="file" onChange={(e) => setImage(e.target.files[0])} />
-          </div>
-          <div className="file-path-wrapper">
-            <input className="file-path validate" type="text" />
-          </div>
-        </div>
+		<div>
+			<div className='card mx-[30px] my-auto w-full p-[20px] text-center create-card'>
+				<div className='file-field mx-[30px] my-auto w-full p-[20px] text-center'>
+					<div className='btn #42a5f5 blue darken-1'>
+						<span>Upload Image</span>
+						<input type='file' onChange={(e) => setImage(e.target.files[0])} />
+					</div>
+					<div className='file-path-wrapper'>
+						<input className='file-path validate' type='text' />
+					</div>
+				</div>
 
-        <button
-          className="btn waves-effect waves-light #42a5f5 blue darken-1"
-          onClick={() => postDetails()}
-        >
-          Submit Story
-        </button>
-      </div>
-    </div>
-  );
+				<button
+					className='btn waves-effect waves-light #42a5f5 blue darken-1'
+					onClick={() => postDetails()}>
+					Submit Story
+				</button>
+			</div>
+		</div>
+	);
 };
-//dislzfvur
+
 export default CreateStories;

@@ -24,10 +24,10 @@ const Profile = () => {
   };
 
   return (
-    <div className="profile">
-      <div className="user-profile">
+    <div className="max-w-[550px] mx-0 my-auto">
+      <div className="flex content-around mx-4 my-0 border-[1px] border-gray-500">
         <div>
-          <img className="profile-icon" src={require("../../../src/egg.png")} />
+          <img className="w-[160px] h-[160px] rounded-[80px]" alt='warning gone' src={require("../../../src/egg.png")} />
         </div>
         <div>
           <h4>
@@ -37,14 +37,14 @@ const Profile = () => {
             </i>
           </h4>
           <h5>{state ? state.email : "loading"}</h5>
-          <div className="content-section">
+          <div className="flex content-around w-[108%]">
             <h6>{mypics.length} posts</h6>
           </div>
         </div>
       </div>
-      <div className="gallery">
+      <div className="flex flex-wrap content-around">
         {mypics.map((item) => {
-          return <img className="item" src={item.photo} alt={item.title} />;
+          return <img className="w-[30%]" src={item.photo} alt={item.title} />;
         })}
       </div>
     </div>

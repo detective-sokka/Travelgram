@@ -70,16 +70,16 @@ const NavBar = () => {
   return (
     <>
       <nav>
-        <div className="nav-wrapper">
-          <h3 className="brand-logo left">【﻿Ｔｒａｖｅｌｇｒａｍ】</h3>
+        <div className="block w-full bg-[#002B5B] relative h-[90%]">
+          <h3 className="flex items-center font-[fantasy] ml-5 sidebar-material">【﻿Ｔｒａｖｅｌｇｒａｍ】</h3>
           <a
-            href="#"
+            href="/"
             data-target="mobile-demo"
-            className="sidenav-trigger sidenav-icon"
+            className="float-right no-underline sidenav-icon"
           >
             <i className="material-icons">menu</i>
           </a>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <ul id="nav-mobile" className="justify-self-[right] hide-on-med-and-down">
             {renderList()}
           </ul>
         </div>

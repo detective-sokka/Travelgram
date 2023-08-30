@@ -37,7 +37,7 @@ const CreatePost = ({ belongsTo }) => {
           console.log(err);
         });
     }
-  }, [url]);
+  }, [url, belongsTo, navigate, body, title]);
 
   const postDetails = () => {
     const data = new FormData();

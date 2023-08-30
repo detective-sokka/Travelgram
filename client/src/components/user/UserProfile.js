@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 const Profile = () => {
   const [UserProfile, setProfile] = useState(null);
   const [showfollow, setShowFollow] = useState(true);
-  const { state, dispatch } = useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
   const { userid } = useParams();
   // console.log(userid)
   useEffect(() => {
@@ -24,7 +24,7 @@ const Profile = () => {
         setProfile(result);
         //setPics(result.mypost)
       });
-  }, []);
+  }, [userid]);
 
   const followUsers = () => {
     fetch("/follow", {
@@ -79,7 +79,7 @@ const Profile = () => {
 
         setProfile((prevState) => {
           const newFollower = prevState.user.followers.filter(
-            (item) => item != data._id
+            (item) => item !== data._id
           );
 
           return {
@@ -98,11 +98,12 @@ const Profile = () => {
   return (
     <>
       {UserProfile ? (
-        <div className="profile">
-          <div className="user-profile">
+        <div className="max-w-[550px] my-auto mx-0">
+          <div className="flex content-around my-[16px] mx-0">
             <div>
               <img
-                className="profile-icon"
+                alt='making warning go away'
+                className="w-[160px] h-[160px] rounded-full object-cover"
                 src="https://images.unsplash.com/photo-1520183802803-06f731a2059f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGVyc29ufGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=800&q=60"
               />
             </div>
@@ -136,7 +137,7 @@ const Profile = () => {
               )}
             </div>
           </div>
-          <div className="gallery">
+          <div className="flex flex-wrap content-around">
             {UserProfile.posts.map((item) => {
               return <img className="item" src={item.photo} alt={item.title} />;
             })}
